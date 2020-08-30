@@ -3,23 +3,37 @@ import Home from './HomeComponent';
 import Menu from './MenuComponent';
 import MenuInfo from './MenuInfoComponent';
 import About from './AboutComponent';
-import { View, Platform } from 'react-native';
+import Order from './OrderComponent';
+import { View, Platform, StyleSheet } from 'react-native';
+import { Icon } from 'react-native-elements';
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
 
 const MenuNavigator = createStackNavigator(
     {
-        Menu: { screen: Menu },
+        Menu: { 
+            screen: Menu,
+            navigationOptions: ({navigation}) => ({
+                headerLeft: <Icon
+                    name='list-alt'
+                    type='font-awesome'
+                    iconStyle={styles.pageIcon}
+                    onPress={() => navigation.toggleDrawer()}
+                />
+            })
+        },
         MenuInfo: { screen: MenuInfo }
     }, 
     {
         initialRouteName: 'Menu',
         navigationOptions: {
             headerStyle: {
-                backgroundColor: '#fff'
+                backgroundColor: 'mediumspringgreen'
             },
-            headerTintColor: '#fff',
+            headerTintColor: 'mediumspringgreen',
             headerTitleStyle: {
-                color: '#fff'
+                color: 'midnightblue',
+                marginLeft: 113,
+                marginBottom: 15
             }
         }
     }
@@ -30,32 +44,73 @@ const HomeNavigator = createStackNavigator(
         Home: { screen: Home }
     },
     {
-        navigationOptions: {
+        navigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: '#fff'
+                backgroundColor: 'mediumspringgreen'
             },
-            headerTintColor: '#fff',
+            headerTintColor: 'mediumspringgreen',
             headerTitleStyle: {
-                color: '#fff'
-            }
-        }
+                color: 'midnightblue',
+                marginLeft: 113,
+                marginBottom: 15
+            },
+            headerLeft: <Icon
+                name='home'
+                type='font-awesome'
+                iconStyle={styles.pageIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
+        })
     }
 );
 
 const AboutNavigator = createStackNavigator(
     {
-        Home: { screen: About }
+        About: { screen: About }
     },
     {
-        navigationOptions: {
+        navigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: '#fff'
+                backgroundColor: 'mediumspringgreen'
             },
-            headerTintColor: '#fff',
+            headerTintColor: 'mediumspringgreen',
             headerTitleStyle: {
-                color: '#fff'
-            }
-        }
+                color: 'midnightblue',
+                marginLeft: 113,
+                marginBottom: 15
+            },
+            headerLeft: <Icon
+                name='list'
+                type='font-awesome'
+                iconStyle={styles.pageIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
+        })
+    }
+);
+
+const OrderNavigator = createStackNavigator(
+    {
+        Order: { screen: Order }
+    },
+    {
+        navigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: 'mediumspringgreen',
+            },
+            headerTintColor: 'mediumspringgreen',
+            headerTitleStyle: {
+                color: 'midnightblue',
+                marginLeft: 113,
+                marginBottom: 15
+            },
+            headerLeft: <Icon
+                name='shopping-bag'
+                type='font-awesome'
+                iconStyle={styles.pageIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
+        })
     }
 );
 
@@ -63,10 +118,11 @@ const MainNavigator = createDrawerNavigator(
     {
         Home: { screen: HomeNavigator },
         About: { screen: AboutNavigator },
-        Menu: { screen: MenuNavigator }
+        Menu: { screen: MenuNavigator },
+        Order: { screen: OrderNavigator }
     },
     {
-        drawerBackgroundColor: '#fff'
+        drawerBackgroundColor: 'mediumspringgreen',
     }
 );
 
@@ -79,5 +135,15 @@ class Main extends Component {
         );
     }
 }
+
+const styles = StyleSheet.create({
+    pageIcon: {
+        marginLeft: 10,
+        marginBottom: 15,
+        color: 'midnightblue',
+        fontSize: 35
+    }
+});
+
 
 export default Main;

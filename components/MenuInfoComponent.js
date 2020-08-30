@@ -7,7 +7,7 @@ function RenderMenuInfo({menuItem}) {
    
     if (menuItem) {
         return (
-            <Card featuredTitle={menuItem.name}>
+            <Card title={menuItem.name}>
                 <Text style={{margin: 10}}>
                     {menuItem.description}
                 </Text>
@@ -27,7 +27,7 @@ class MenuInfo extends Component {
     }
 
     static navigationOptions = {
-        title: 'Dish Information'
+        title: 'INFO'
     };
 
     render() {

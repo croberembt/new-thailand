@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { ScrollView, Text, SafeAreaView, StyleSheet } from 'react-native';
 
-
-class About extends Component {
+class Order extends Component {
 
     constructor(props) {
         super(props);
     }
 
     static navigationOptions = {
-        title: 'ABOUT US'
+        title: 'ORDER'
     };
 
     render() {
@@ -17,7 +16,7 @@ class About extends Component {
             <SafeAreaView style={styles.container}>
                 <ScrollView style={styles.scrollView}>
                     <Text style={styles.text}>
-                        ABOUT US
+                        ORDER FOR PICKUP OR DELIVERY
                     </Text>
                 </ScrollView>
             </SafeAreaView>
@@ -39,4 +38,4 @@ const styles = StyleSheet.create({
     },
   });
 
-export default About;
+export default Order;

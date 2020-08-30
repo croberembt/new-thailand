@@ -14,7 +14,7 @@ class Menu extends Component {
     }
 
     static navigationOptions = {
-        title: 'Menu'
+        title: 'MENU'
     };
 
     render() {
@@ -25,6 +25,7 @@ class Menu extends Component {
                     title={item.name}
                     subtitle={item.description}
                     onPress={() => navigate('MenuInfo', { menuId: item.id })}
+                    leftAvatar={{ source: require('./images/menu-icon.png')}}
                 />
             );
         };

@@ -1,19 +1,38 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { ScrollView, Text, SafeAreaView, StyleSheet } from 'react-native';
 
 class Home extends Component {
 
     static navigationOptions = {
-        title: 'Home'
+        title: 'HOME'
     }
 
     render() {
-        return (
-            <View>
-                <Text>Welcome to New Thailand!</Text>
-            </View>
+        return(
+            <SafeAreaView style={styles.container}>
+                <ScrollView style={styles.scrollView}>
+                    <Text style={styles.text}>
+                        WELCOME TO NEW THAILAND!
+                    </Text>
+                </ScrollView>
+            </SafeAreaView>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: 'mediumspringgreen'
+    },
+    scrollView: {
+      backgroundColor: 'mediumspringgreen',
+    },
+    text: {
+      fontSize: 42,
+      color: 'mintcream'
+    },
+  });
+  
 
 export default Home;
