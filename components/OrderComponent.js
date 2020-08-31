@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, SafeAreaView, StyleSheet, Text } from 'react-native';
+import { ScrollView, SafeAreaView, StyleSheet, Alert } from 'react-native';
 import { Card, Button } from 'react-native-elements';
 
 class Order extends Component {
@@ -13,6 +13,7 @@ class Order extends Component {
     };
 
     render() {
+        const { navigate } = this.props.navigation;
         return(
             <SafeAreaView style={styles.container}>
                 <ScrollView style={styles.scrollView}>
@@ -22,8 +23,9 @@ class Order extends Component {
                         <Button
                             type='outline'
                             title='Pick Up'
-                            titleStyle={{ color: 'midnightblue', fontSize: 16 }}
-                            buttonStyle={{ marginTop: 50, backgroundColor: 'azure' }}
+                            titleStyle={{ color: 'mediumspringgreen', fontSize: 16 }}
+                            buttonStyle={{ marginTop: 50, backgroundColor: 'midnightblue' }}
+                            onPress={() => Alert.alert('Please call as us at (612) 313-1313 to order for pick up.')}
                         />
                     </Card>
                     <Card 
@@ -32,8 +34,9 @@ class Order extends Component {
                         <Button
                             type='outline'
                             title='Delivery'
-                            titleStyle={{ color: 'midnightblue', fontSize: 16 }}
-                            buttonStyle={{ marginTop: 50, backgroundColor: 'azure' }}
+                            titleStyle={{ color: 'mediumspringgreen', fontSize: 16 }}
+                            buttonStyle={{ marginTop: 50, backgroundColor: 'midnightblue' }}
+                            onPress={() => Alert.alert('Please go to http://bitesquad.com to order delivery.')}
                         />
                     </Card>
                 </ScrollView>

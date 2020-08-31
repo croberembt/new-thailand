@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, ScrollView } from 'react-native';
-import { Card, Button } from 'react-native-elements';
+import { Card } from 'react-native-elements';
 import { MENU } from '../shared/menu';
 
 
@@ -17,17 +17,11 @@ function RenderMenuInfo({menuItem}) {
                     <Text style={{ color: 'azure', fontSize: 20, textAlign: 'center' }}>
                         {menuItem.description}
                     </Text>
-                    <Button
-                        type='outline'
-                        title='Add To Cart'
-                        titleStyle={{ color: 'midnightblue', fontSize: 16 }}
-                        buttonStyle={{ marginTop: 50, backgroundColor: 'azure' }}
-                    />
                 </Card>
             </ScrollView>
         );
     }
-    return <View />;
+    return <ScrollView />;
 }
 
 class MenuInfo extends Component {

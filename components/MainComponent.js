@@ -152,11 +152,71 @@ const OrderNavigator = createStackNavigator(
 
 const MainNavigator = createDrawerNavigator(
     {
-        Home: { screen: HomeNavigator },
-        About: { screen: AboutNavigator },
-        Gallery: { screen: GalleryNavigator },
-        Menu: { screen: MenuNavigator },
-        Order: { screen: OrderNavigator }
+        Home: {
+            screen: HomeNavigator,
+            navigationOptions: {
+                drawerIcon: () => (
+                    <Icon
+                        name='home'
+                        type='font-awesome'
+                        size={22}
+                        color='midnightblue'
+                    />
+                )
+            }
+        },
+        About: {
+            screen: AboutNavigator,
+            navigationOptions: {
+                drawerIcon: () => (
+                    <Icon
+                        name='list'
+                        type='font-awesome'
+                        size={22}
+                        color='midnightblue'
+                    />
+                )
+            }
+        },
+        Gallery: {
+            screen: GalleryNavigator,
+            navigationOptions: {
+                drawerIcon: () => (
+                    <Icon
+                        name='photo'
+                        type='font-awesome'
+                        size={22}
+                        color='midnightblue'
+                    />
+                )
+            }
+        },
+        Menu: {
+            screen: MenuNavigator,
+            navigationOptions: {
+                drawerIcon: () => (
+                    <Icon
+                        name='list-alt'
+                        type='font-awesome'
+                        size={22}
+                        color='midnightblue'
+                    />
+                )
+            }
+        },
+        Order: {
+            screen: OrderNavigator,
+            navigationOptions: {
+                drawerIcon: () => (
+                    <Icon
+                        name='shopping-bag'
+                        type='font-awesome'
+                        size={22}
+                        color='midnightblue'
+                    />
+                )
+            }
+        }
     },
     {
         drawerBackgroundColor: 'mediumspringgreen',

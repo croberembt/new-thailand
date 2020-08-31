@@ -48,7 +48,7 @@ class Home extends Component {
                         containerStyle={{ backgroundColor: 'mediumspringgreen' }}
                     >
                         <Text style={styles.text}>
-                            (612) 313 1313
+                            (612) 313-1313
                         </Text>
                     </Card>
                 </ScrollView>
