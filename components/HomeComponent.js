@@ -12,6 +12,7 @@ class Home extends Component {
         return(
             <SafeAreaView style={styles.container}>
                 <ScrollView style={styles.scrollView}>
+                    <Text style={{ marginTop: 20, textAlign: 'center', fontSize: 25, color: 'azure', fontWeight: 'bold' }}>WELCOME TO NEW THAILAND!</Text>
                     <Card
                         title='Business Hours'
                         titleStyle={{ color: 'azure', fontSize: 24 }}
