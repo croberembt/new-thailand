@@ -27,12 +27,16 @@ class Menu extends Component {
                         bottomDivider
                         containerStyle={{ backgroundColor: 'mediumspringgreen' }}
                         title={item.name}
-                        titleStyle={{ color: 'azure', fontSize: 18, fontWeight: 'bold', marginBottom: 10 }}
+                        titleStyle={{ color: 'azure', fontSize: 18, fontWeight: 'bold', marginBottom: 10, marginLeft: 10 }}
                         subtitle={item.description}
-                        subtitleStyle={{ color: 'azure', fontSize: 16}}
+                        subtitleStyle={{ color: 'azure', fontSize: 16, marginLeft: 10 }}
                         onPress={() => navigate('MenuInfo', { menuId: item.id })}
-                        leftAvatar={{ source: require('./images/menu-icon.png')}}
-                        leftAvatarStyle={{ backgroundColor: 'mediumspringgreen' }}
+                        leftIcon={{
+                            name: 'list',
+                            type: 'font-awesome',
+                            color: 'midnightblue',
+                            size: 30
+                        }}
                     />
                 </View>
             );

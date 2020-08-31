@@ -50,6 +50,4 @@ class MenuInfo extends Component {
     }
 }
 
-
-
 export default MenuInfo;

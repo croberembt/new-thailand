@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { ScrollView, Text, SafeAreaView, StyleSheet } from 'react-native';
+import { ScrollView, SafeAreaView, StyleSheet, Text } from 'react-native';
+import { Card, Button } from 'react-native-elements';
 
 class Order extends Component {
 
@@ -15,12 +16,26 @@ class Order extends Component {
         return(
             <SafeAreaView style={styles.container}>
                 <ScrollView style={styles.scrollView}>
-                    <Text style={styles.text}>
-                        PICK UP
-                    </Text>
-                    <Text style={styles.text}>
-                        DELIVERY
-                    </Text>
+                    <Card 
+                        containerStyle={{ backgroundColor: 'mediumspringgreen' }}
+                    >
+                        <Button
+                            type='outline'
+                            title='Pick Up'
+                            titleStyle={{ color: 'midnightblue', fontSize: 16 }}
+                            buttonStyle={{ marginTop: 50, backgroundColor: 'azure' }}
+                        />
+                    </Card>
+                    <Card 
+                        containerStyle={{ backgroundColor: 'mediumspringgreen' }}
+                    >
+                        <Button
+                            type='outline'
+                            title='Delivery'
+                            titleStyle={{ color: 'midnightblue', fontSize: 16 }}
+                            buttonStyle={{ marginTop: 50, backgroundColor: 'azure' }}
+                        />
+                    </Card>
                 </ScrollView>
             </SafeAreaView>
         );
@@ -29,16 +44,16 @@ class Order extends Component {
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      backgroundColor: 'mediumspringgreen'
+        flex: 1,
+        backgroundColor: 'mediumspringgreen'
     },
     scrollView: {
-      backgroundColor: 'mediumspringgreen',
+        backgroundColor: 'mediumspringgreen',
     },
     text: {
-      fontSize: 42,
-      color: 'azure',
-      textAlign: 'center'
+        fontSize: 42,
+        color: 'azure',
+        textAlign: 'center'
     },
   });
 
