@@ -4,6 +4,7 @@ import Menu from './MenuComponent';
 import MenuInfo from './MenuInfoComponent';
 import About from './AboutComponent';
 import Order from './OrderComponent';
+import Gallery from './GalleryComponent';
 import { View, Platform, StyleSheet } from 'react-native';
 import { Icon } from 'react-native-elements';
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
@@ -21,7 +22,17 @@ const MenuNavigator = createStackNavigator(
                 />
             })
         },
-        MenuInfo: { screen: MenuInfo }
+        MenuInfo: { 
+            screen: MenuInfo,
+            navigationOptions: ({navigation}) => ({
+                headerLeft: <Icon
+                    name='arrow-circle-o-left'
+                    type='font-awesome'
+                    iconStyle={styles.pageIcon}
+                    onPress={() => navigation.pop()}
+                />
+            })
+        },
     }, 
     {
         initialRouteName: 'Menu',
@@ -32,7 +43,7 @@ const MenuNavigator = createStackNavigator(
             headerTintColor: 'mediumspringgreen',
             headerTitleStyle: {
                 color: 'midnightblue',
-                marginLeft: 113,
+                marginLeft: 110,
                 marginBottom: 15
             }
         }
@@ -51,7 +62,7 @@ const HomeNavigator = createStackNavigator(
             headerTintColor: 'mediumspringgreen',
             headerTitleStyle: {
                 color: 'midnightblue',
-                marginLeft: 113,
+                marginLeft: 110,
                 marginBottom: 15
             },
             headerLeft: <Icon
@@ -76,11 +87,36 @@ const AboutNavigator = createStackNavigator(
             headerTintColor: 'mediumspringgreen',
             headerTitleStyle: {
                 color: 'midnightblue',
-                marginLeft: 113,
+                marginLeft: 110,
                 marginBottom: 15
             },
             headerLeft: <Icon
                 name='list'
+                type='font-awesome'
+                iconStyle={styles.pageIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
+        })
+    }
+);
+
+const GalleryNavigator = createStackNavigator(
+    {
+        Gallery: { screen: Gallery }
+    },
+    {
+        navigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: 'mediumspringgreen'
+            },
+            headerTintColor: 'mediumspringgreen',
+            headerTitleStyle: {
+                color: 'midnightblue',
+                marginLeft: 110,
+                marginBottom: 15
+            },
+            headerLeft: <Icon
+                name='photo'
                 type='font-awesome'
                 iconStyle={styles.pageIcon}
                 onPress={() => navigation.toggleDrawer()}
@@ -101,7 +137,7 @@ const OrderNavigator = createStackNavigator(
             headerTintColor: 'mediumspringgreen',
             headerTitleStyle: {
                 color: 'midnightblue',
-                marginLeft: 113,
+                marginLeft: 110,
                 marginBottom: 15
             },
             headerLeft: <Icon
@@ -118,6 +154,7 @@ const MainNavigator = createDrawerNavigator(
     {
         Home: { screen: HomeNavigator },
         About: { screen: AboutNavigator },
+        Gallery: { screen: GalleryNavigator },
         Menu: { screen: MenuNavigator },
         Order: { screen: OrderNavigator }
     },

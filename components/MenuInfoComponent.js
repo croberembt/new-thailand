@@ -1,17 +1,30 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
-import { Card } from 'react-native-elements';
+import { Text, ScrollView } from 'react-native';
+import { Card, Button } from 'react-native-elements';
 import { MENU } from '../shared/menu';
+
 
 function RenderMenuInfo({menuItem}) {
    
     if (menuItem) {
         return (
-            <Card title={menuItem.name}>
-                <Text style={{margin: 10}}>
-                    {menuItem.description}
-                </Text>
-            </Card>
+            <ScrollView style={{ backgroundColor: 'mediumspringgreen' }}>
+                <Card 
+                    title={menuItem.name}
+                    titleStyle={{ color: 'white', fontSize: 24 }}
+                    containerStyle={{ backgroundColor: 'mediumspringgreen' }}
+                >
+                    <Text style={{ color: 'white', fontSize: 20 }}>
+                        {menuItem.description}
+                    </Text>
+                    <Button
+                        type='outline'
+                        title='Add To Cart'
+                        titleStyle={{ color: 'midnightblue', fontSize: 16 }}
+                        buttonStyle={{ marginTop: 50, backgroundColor: 'white' }}
+                    />
+                </Card>
+            </ScrollView>
         );
     }
     return <View />;
@@ -27,7 +40,7 @@ class MenuInfo extends Component {
     }
 
     static navigationOptions = {
-        title: 'INFO'
+        title: 'DETAILS'
     };
 
     render() {
@@ -36,5 +49,7 @@ class MenuInfo extends Component {
         return <RenderMenuInfo menuItem={menuItem} />;
     }
 }
+
+
 
 export default MenuInfo;
