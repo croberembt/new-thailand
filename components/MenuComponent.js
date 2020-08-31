@@ -27,9 +27,9 @@ class Menu extends Component {
                         bottomDivider
                         containerStyle={{ backgroundColor: 'mediumspringgreen' }}
                         title={item.name}
-                        titleStyle={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}
+                        titleStyle={{ color: 'azure', fontSize: 18, fontWeight: 'bold', marginBottom: 10 }}
                         subtitle={item.description}
-                        subtitleStyle={{ color: 'white', fontSize: 16}}
+                        subtitleStyle={{ color: 'azure', fontSize: 16}}
                         onPress={() => navigate('MenuInfo', { menuId: item.id })}
                         leftAvatar={{ source: require('./images/menu-icon.png')}}
                         leftAvatarStyle={{ backgroundColor: 'mediumspringgreen' }}

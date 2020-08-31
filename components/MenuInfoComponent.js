@@ -11,17 +11,17 @@ function RenderMenuInfo({menuItem}) {
             <ScrollView style={{ backgroundColor: 'mediumspringgreen' }}>
                 <Card 
                     title={menuItem.name}
-                    titleStyle={{ color: 'white', fontSize: 24 }}
+                    titleStyle={{ color: 'azure', fontSize: 24 }}
                     containerStyle={{ backgroundColor: 'mediumspringgreen' }}
                 >
-                    <Text style={{ color: 'white', fontSize: 20 }}>
+                    <Text style={{ color: 'azure', fontSize: 20, textAlign: 'center' }}>
                         {menuItem.description}
                     </Text>
                     <Button
                         type='outline'
                         title='Add To Cart'
                         titleStyle={{ color: 'midnightblue', fontSize: 16 }}
-                        buttonStyle={{ marginTop: 50, backgroundColor: 'white' }}
+                        buttonStyle={{ marginTop: 50, backgroundColor: 'azure' }}
                     />
                 </Card>
             </ScrollView>

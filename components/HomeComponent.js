@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, Text, SafeAreaView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, SafeAreaView, Text } from 'react-native';
 
 class Home extends Component {
 
@@ -9,13 +9,13 @@ class Home extends Component {
 
     render() {
         return(
-            <SafeAreaView style={styles.container}>
-                <ScrollView style={styles.scrollView}>
-                    <Text style={styles.text}>
-                        WELCOME TO NEW THAILAND!
-                    </Text>
-                </ScrollView>
-            </SafeAreaView>
+          <SafeAreaView style={styles.container}>
+            <ScrollView style={styles.scrollView}>
+                <Text style={styles.text}>
+                    HOME
+                </Text>
+            </ScrollView>
+          </SafeAreaView>
         );
     }
 }
@@ -23,14 +23,15 @@ class Home extends Component {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: 'mediumspringgreen'
+      backgroundColor: 'mediumspringgreen',
+      alignItems: 'center'
     },
     scrollView: {
-      backgroundColor: 'mediumspringgreen',
+      backgroundColor: 'mediumspringgreen'
     },
     text: {
       fontSize: 42,
-      color: 'mintcream'
+      color: 'azure'
     },
   });
   

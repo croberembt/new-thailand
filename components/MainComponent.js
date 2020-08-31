@@ -43,7 +43,7 @@ const MenuNavigator = createStackNavigator(
             headerTintColor: 'mediumspringgreen',
             headerTitleStyle: {
                 color: 'midnightblue',
-                marginLeft: 110,
+                marginLeft: 30,
                 marginBottom: 15
             }
         }
@@ -62,7 +62,7 @@ const HomeNavigator = createStackNavigator(
             headerTintColor: 'mediumspringgreen',
             headerTitleStyle: {
                 color: 'midnightblue',
-                marginLeft: 110,
+                marginLeft: 30,
                 marginBottom: 15
             },
             headerLeft: <Icon
@@ -87,7 +87,7 @@ const AboutNavigator = createStackNavigator(
             headerTintColor: 'mediumspringgreen',
             headerTitleStyle: {
                 color: 'midnightblue',
-                marginLeft: 110,
+                marginLeft: 30,
                 marginBottom: 15
             },
             headerLeft: <Icon
@@ -112,7 +112,7 @@ const GalleryNavigator = createStackNavigator(
             headerTintColor: 'mediumspringgreen',
             headerTitleStyle: {
                 color: 'midnightblue',
-                marginLeft: 110,
+                marginLeft: 30,
                 marginBottom: 15
             },
             headerLeft: <Icon
@@ -137,7 +137,7 @@ const OrderNavigator = createStackNavigator(
             headerTintColor: 'mediumspringgreen',
             headerTitleStyle: {
                 color: 'midnightblue',
-                marginLeft: 110,
+                marginLeft: 30,
                 marginBottom: 15
             },
             headerLeft: <Icon
